@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label>Sort by year
+            <input type="submit" name="sort" value="ascending">
+            <input type="submit" name="sort" value="descending">
+        </label>
+    </form>
+    <form action="" method="post">
+        <label>Show only movies from a particular year
+            <input type="text" name="year" value="">
+        </label>
+     <button type="submit">Submit</button>
+    </form>
+    <form action="" method="post">
+        <label>Choose tags
+            <select name="tag1">
+                {% for tag in tags %}
+                    <option value="{{ tag }}">{{ tag }}</option>
+                {% endfor %}
+            </select>
+            <select name="tag2">
+                {% for tag in tags %}
+                    <option value="{{ tag }}">{{ tag }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Search</button>
+        </label>
+    </form>
+    <ul>
+    {% for row in movie_list %}
+        <li>{{ row }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
